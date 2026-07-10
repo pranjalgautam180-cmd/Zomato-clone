@@ -1,0 +1,15 @@
+.admin-page {
+  padding: 2rem;
+}
+.admin-cards {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.admin-card {
+  flex: 1;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: var(--card-bg, #fff);
+}

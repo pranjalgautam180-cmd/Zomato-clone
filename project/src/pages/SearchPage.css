@@ -1,0 +1,113 @@
+.search-page {
+  min-height: 100vh;
+  padding: 100px 24px 48px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.search-page-header {
+  margin-bottom: 24px;
+}
+
+.search-page-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+.search-page-body {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.search-filters {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 90px;
+}
+
+.filter-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.filter-group {
+  margin-bottom: 20px;
+}
+
+.filter-group h4 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.filter-group select {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text);
+  font-size: 0.9rem;
+  cursor: pointer;
+  outline: none;
+  transition: border-color var(--transition);
+}
+
+.filter-group select:focus {
+  border-color: var(--primary);
+}
+
+.filter-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 6px 0;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.filter-checkbox input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--primary);
+  cursor: pointer;
+}
+
+.search-results {
+  min-width: 0;
+}
+
+.results-count {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .search-page-body {
+    grid-template-columns: 1fr;
+  }
+  .search-filters {
+    position: static;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-page {
+    padding: 80px 16px 32px;
+  }
+}

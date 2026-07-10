@@ -1,0 +1,37 @@
+.rating-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: white;
+  white-space: nowrap;
+}
+
+.rating-star {
+  font-size: 0.75rem;
+}
+
+.rating-good {
+  background: #1a8a5a;
+}
+
+.rating-ok {
+  background: #f59e0b;
+}
+
+.rating-low {
+  background: #e23744;
+}
+
+.rating-small {
+  font-size: 0.8rem;
+  padding: 2px 6px;
+}
+
+.rating-large {
+  font-size: 1rem;
+  padding: 4px 10px;
+}

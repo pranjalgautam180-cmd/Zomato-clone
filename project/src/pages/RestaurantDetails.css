@@ -1,0 +1,264 @@
+.restaurant-details-page {
+  min-height: 100vh;
+}
+
+.restaurant-details-banner {
+  position: relative;
+  height: 320px;
+  overflow: hidden;
+}
+
+.restaurant-details-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.restaurant-details-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.6) 100%);
+}
+
+.restaurant-details-content {
+  max-width: 900px;
+  margin: -60px auto 0;
+  padding: 0 24px 48px;
+  position: relative;
+  z-index: 1;
+}
+
+.restaurant-details-header {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.restaurant-details-info {
+  flex: 1;
+}
+
+.restaurant-details-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.restaurant-details-cuisine {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+
+.restaurant-details-meta {
+  display: flex;
+  gap: 24px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.restaurant-details-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.restaurant-details-meta-item span:last-child {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.meta-value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.restaurant-details-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-end;
+}
+
+.restaurant-details-offer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--gray-50);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  text-align: left;
+}
+
+[data-theme="dark"] .restaurant-details-offer {
+  background: var(--gray-100);
+}
+
+.offer-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.restaurant-details-offer strong {
+  font-size: 1rem;
+  color: var(--text);
+  display: block;
+}
+
+.restaurant-details-offer p {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.restaurant-details-wishlist {
+  padding: 8px 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+  transition: all var(--transition);
+}
+
+.restaurant-details-wishlist:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.restaurant-details-wishlist.wished {
+  color: var(--primary);
+  border-color: var(--primary);
+  background: rgba(226, 55, 68, 0.08);
+}
+
+.restaurant-menu-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.menu-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.menu-filters {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.menu-filter-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.menu-filter-checkbox input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--primary);
+  cursor: pointer;
+}
+
+.filter-label {
+  font-weight: 500;
+}
+
+.menu-sort select {
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text);
+  font-size: 0.9rem;
+  cursor: pointer;
+  outline: none;
+}
+
+.restaurant-menu-list {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  padding: 0 20px;
+}
+
+.menu-empty {
+  text-align: center;
+  padding: 48px 24px;
+  color: var(--text-secondary);
+}
+
+.restaurant-not-found {
+  text-align: center;
+  padding: 80px 24px;
+}
+
+.restaurant-not-found h2 {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+
+.back-home-btn {
+  display: inline-block;
+  padding: 10px 24px;
+  background: var(--primary);
+  color: white;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  transition: all var(--transition);
+}
+
+.back-home-btn:hover {
+  background: var(--primary-dark);
+}
+
+@media (max-width: 768px) {
+  .restaurant-details-banner {
+    height: 240px;
+  }
+  .restaurant-details-header {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .restaurant-details-actions {
+    align-items: flex-start;
+    width: 100%;
+  }
+  .restaurant-details-name {
+    font-size: 1.4rem;
+  }
+  .restaurant-details-meta {
+    gap: 16px;
+  }
+  .restaurant-menu-controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
