@@ -6,6 +6,7 @@ import './Login.css';
 const Signup = () => {
   const { loginUser } = useCart();    
   const navigate = useNavigate();
+  const API_BASE_URL = 'https://zomato-production-98af.up.railway.app';
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
@@ -34,7 +35,7 @@ const Signup = () => {
     setLoading(true);
 
     try {
-      const response = await fetch('http://localhost:8000/api/users/create', {
+      const response = await fetch(`${API_BASE_URL}/api/users/create`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
