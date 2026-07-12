@@ -9,6 +9,7 @@ const Cart = () => {
   const navigate = useNavigate();
   const [showCheckout, setShowCheckout] = useState(false);
   const [orderPlaced, setOrderPlaced] = useState(false);
+  const [paymentMethod, setPaymentMethod] = useState('cash');
 
   const deliveryFee = cartTotal > 0 ? (cartTotal > 500 ? 0 : 40) : 0;
   const taxes = Math.round(cartTotal * 0.05);
@@ -27,6 +28,7 @@ const Cart = () => {
       items: cartItems,
       total: total,
       restaurantName: cartItems[0]?.restaurantName || 'Multiple Restaurants',
+      paymentMethod,
     });
     setOrderPlaced(true);
     setShowCheckout(false);
@@ -130,6 +132,48 @@ const Cart = () => {
                 <span>Delivery Address</span>
                 <span>{user?.address || 'Default Address'}</span>
               </div>
+            </div>
+            <div className="checkout-payment">
+              <h3>Payment Method</h3>
+              <label className={`payment-option ${paymentMethod === 'cash' ? 'selected' : ''}`}>
+                <input
+                  type="radio"
+                  name="paymentMethod"
+                  value="cash"
+                  checked={paymentMethod === 'cash'}
+                  onChange={(e) => setPaymentMethod(e.target.value)}
+                />
+                <span>
+                  <strong>Cash on Delivery</strong>
+                  <small>Pay when your order arrives.</small>
+                </span>
+              </label>
+              <label className={`payment-option ${paymentMethod === 'upi' ? 'selected' : ''}`}>
+                <input
+                  type="radio"
+                  name="paymentMethod"
+                  value="upi"
+                  checked={paymentMethod === 'upi'}
+                  onChange={(e) => setPaymentMethod(e.target.value)}
+                />
+                <span>
+                  <strong>UPI</strong>
+                  <small>Use PhonePe, Google Pay, Paytm, or any UPI app.</small>
+                </span>
+              </label>
+              <label className={`payment-option ${paymentMethod === 'card' ? 'selected' : ''}`}>
+                <input
+                  type="radio"
+                  name="paymentMethod"
+                  value="card"
+                  checked={paymentMethod === 'card'}
+                  onChange={(e) => setPaymentMethod(e.target.value)}
+                />
+                <span>
+                  <strong>Credit / Debit Card</strong>
+                  <small>Card payment demo option.</small>
+                </span>
+              </label>
             </div>
             <div className="checkout-actions">
               <button className="checkout-cancel" onClick={() => setShowCheckout(false)}>

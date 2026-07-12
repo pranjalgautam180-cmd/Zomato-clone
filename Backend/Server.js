@@ -1,5 +1,35 @@
+const fs = require('fs');
+const path = require('path');
 const cors = require('cors');   
 const express = require('express');
+
+const envPath = path.join(__dirname, '.env');
+
+if (fs.existsSync(envPath)) {
+    const envFile = fs.readFileSync(envPath, 'utf8');
+
+    envFile.split(/\r?\n/).forEach((line) => {
+        const trimmedLine = line.trim();
+
+        if (!trimmedLine || trimmedLine.startsWith('#')) {
+            return;
+        }
+
+        const equalsIndex = trimmedLine.indexOf('=');
+
+        if (equalsIndex === -1) {
+            return;
+        }
+
+        const key = trimmedLine.slice(0, equalsIndex).trim();
+        const value = trimmedLine.slice(equalsIndex + 1).trim();
+
+        if (key && process.env[key] === undefined) {
+            process.env[key] = value;
+        }
+    });
+}
+
 const db = require('./Confiq/db');
 const userRoutes = require('./Routes/UserRoutes');
 const productRoutes = require('./Routes/ProductRoutes');
